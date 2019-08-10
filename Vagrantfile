@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
             sysctl net.ipv4.conf.all.forwarding=1
             yum install -y quagga
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
+            cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
             SHELL
         when "router2"
@@ -59,6 +60,7 @@ Vagrant.configure("2") do |config|
             sysctl net.ipv4.conf.all.forwarding=1
             yum install -y quagga
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
+            cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
             SHELL
         when "router3"
@@ -66,6 +68,7 @@ Vagrant.configure("2") do |config|
             sysctl net.ipv4.conf.all.forwarding=1
             yum install -y quagga
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
+            cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
             SHELL
           end
