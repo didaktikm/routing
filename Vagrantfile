@@ -54,6 +54,7 @@ Vagrant.configure("2") do |config|
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
             cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
+            systemctl enable ospfd.service --now
             SHELL
         when "router2"
           box.vm.provision "shell", run: "always", inline: <<-SHELL
@@ -62,6 +63,8 @@ Vagrant.configure("2") do |config|
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
             cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
+            systemctl enable ospfd.service --now
+
             SHELL
         when "router3"
           box.vm.provision "shell", run: "always", inline: <<-SHELL
@@ -70,6 +73,8 @@ Vagrant.configure("2") do |config|
             cp /usr/share/doc/quagga-0.99.22.4/zebra.conf.sample /etc/quagga/zebra.conf
             cp /usr/share/doc/quagga-0.99.22.4/ospfd.conf.sample /etc/quagga/ospfd.conf
             systemctl enable zebra.service --now
+            systemctl enable ospfd.service --now
+
             SHELL
           end
       end
